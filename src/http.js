@@ -1,3 +1,4 @@
+var tumble = {}
 
 function buildURLFromParams(url, params){
     var keys = Object.keys(params)
@@ -45,7 +46,7 @@ function buildResponse(xmlhttp){
     return response
 }
 
-function get(url, options){
+tumble.get = function get(url, options){
     return new Promise(function(resolve, reject){
         var xmlhttp = new XMLHttpRequest()
         xmlhttp.onload = function() {
@@ -70,7 +71,7 @@ function get(url, options){
     })
 }
 
-function post(url, params){
+tumble.post = function post(url, params){
     return new Promise(function(resolve, reject){
         var xmlhttp = new XMLHttpRequest()
         xmlhttp.onload = function(){
