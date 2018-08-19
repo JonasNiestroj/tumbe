@@ -32,5 +32,20 @@ tumble.post('/post', { ID: 1 }).then(function(response){
     console.log(error)
 })
 ```
+
+# Response object
+```json
+{
+    // Response data
+    "data": {},
+    // Response headers
+    "headers": {},
+    // Response status
+    "status": 200,
+    // Response statustext
+    "statusText": "OK"
+}
+```
+
 # License
 MIT
