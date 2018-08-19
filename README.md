@@ -34,7 +34,7 @@ tumble.post('/post', { ID: 1 }).then(function(response){
 ```
 
 # Response object
-```json
+```js
 {
     // Response data
     "data": {},
