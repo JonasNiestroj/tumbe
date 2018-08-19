@@ -43,3 +43,27 @@ function get(url, options){
         xmlhttp.send()
     })
 }
+
+function post(url, params){
+    return new Promise(function(resolve, reject){
+        var xmlhttp = new XMLHttpRequest()
+        xmlhttp.onload = function(){
+            if(xmlhttp.status == 200){
+                resolve(xmlhttp.response)
+            }
+            else{
+                reject(xmlhttp.response)
+            }
+        }
+
+        xmlhttp.onerror = function(){
+            reject(xmlhttp.response)
+        }
+
+        xmlhttp.open("POST", url, true)
+        
+        xmlhttp.setRequestHeader('Content-Type', 'application/json')
+
+        xmlhttp.send(JSON.stringify(params))
+    })
+}
